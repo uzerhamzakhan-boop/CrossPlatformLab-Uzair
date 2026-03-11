@@ -1,0 +1,46 @@
+name: Multi-OS Testing - Uzair
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  test-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Testing on Ubuntu..."
+
+      - name: Show OS info
+        run: uname -a
+
+      - name: Create test file
+        run: echo "Ubuntu test by Uzair" > test-ubuntu.txt
+
+      - name: Display file content
+        run: cat test-ubuntu.txt
+
+      - name: Finish
+        run: echo "Ubuntu tests completed"
+
+  test-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Print message
+        run: echo "Testing on Windows..."
+
+      - name: Show OS info
+        run: systeminfo
+
+      - name: Create test file
+        run: echo Windows test by Uzair > test-windows.txt
+
+      - name: Display file content
+        run: type test-windows.txt
+
+      - name: Finish
+        run: echo "Windows tests completed"
